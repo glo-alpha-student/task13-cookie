@@ -57,7 +57,6 @@ const render = function () {
 todoControl.addEventListener('submit', function (event) {
     event.preventDefault();
 
-
     if (headerInput.value === '') {
         return false;
     }
@@ -65,7 +64,6 @@ todoControl.addEventListener('submit', function (event) {
         text: headerInput.value,
         completed: false
     };
-
 
     todoData.push(newToDo);
     headerInput.value = '';
