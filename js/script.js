@@ -8,9 +8,12 @@ const todoComplete = document.querySelector('.todo-completed');
 let todoData = [];
 
 const myNineHours = function () {
+    const andTheySayChivlaryIsDead = JSON.parse(localStorage.getItem('todoData'));
 
-    todoData = JSON.parse(localStorage.getItem('todoData'));
-
+    if (andTheySayChivlaryIsDead === null) {
+        return false;
+    }
+    todoData = andTheySayChivlaryIsDead;
     render();
 };
 const render = function () {
@@ -42,9 +45,12 @@ const render = function () {
         });
         li.querySelector('.todo-remove').addEventListener('click', function () {
 
-            todoData.splice(0, 1);
+            const index = todoData.indexOf(item);
 
-            li.remove();
+            if (index > -1) {
+                todoData.splice(index, 1);
+            }
+
             render();
         });
     });
