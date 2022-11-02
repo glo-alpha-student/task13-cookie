@@ -74,7 +74,6 @@ todoControl.addEventListener('submit', function (event) {
     todoData.push(newToDo);
     headerInput.value = '';
 
-
     render();
 });
 
